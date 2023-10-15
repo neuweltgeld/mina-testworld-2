@@ -21,7 +21,6 @@ sudo apt-get install -y mina-berkeley=2.0.0rampup5-55b7818
 # If you are using Ufw, allow these permissions
 sudo ufw enable
 sudo ufw allow 22
-sudo ufw allow 8302
 sudo ufw allow 8301
 sudo ufw allow 3089
 ```
