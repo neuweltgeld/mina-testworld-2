@@ -28,7 +28,8 @@ sudo ufw allow 3089
 
 ```console
 # After setting up your nodes you need to add your keys to your node.
-# Please use the same keypair in all of your Network Performance Testing nodes. Do not share your keypairs with anyone.
+# Please use the same keypair in all of your Network Performance Testing nodes.
+# Do not share your keypairs with anyone.
 # The keypair gives you access to an account on the testnet that has been allocated a stake.
 # With this stake, you can start your block production on the testnet.
 
@@ -69,7 +70,8 @@ nano ~/keys/my-wallet.pub
 mina libp2p generate-keypair -privkey-path /root/keys/libkey
 
 # Set a password. And this password will be yours MINA_LIBP2P_PASS
-# MINA_PRIVKEY_PASS and UPTIME_PRIVKEY_PASS are same and can be found in the file community-yyy-password.txt that you extracted.
+# MINA_PRIVKEY_PASS and UPTIME_PRIVKEY_PASS are same and
+# can be found in the file community-yyy-password.txt that you extracted.
 
 # Change the following "PASS" variables (do not delete double quotes) as above. 
 RAYON_NUM_THREADS:6
@@ -87,7 +89,8 @@ nano ~/.mina-env
 # Now, we will create a service file. This way mina will restart itself when it crashes.
 sudo nano /etc/systemd/system/mina.service
 
-# Read the ExecStart command carefully and change its variables according to your own settings and paths. Change YOURIP.
+# Read the ExecStart command carefully and change its variables according to your own settings and paths.
+# Change YOURIP.
 
 [Unit]
 Description=Mina Protocol
