@@ -153,4 +153,8 @@ sudo systemctl start mina
 # Check latest status of mina.
 
 mina client status
+```
+
+The expected output of the mina client status command is:
+![image](https://github.com/neuweltgeld/mina-testworld-2/assets/101174090/4a55aa4c-f2dd-44a7-8449-bb190f69a95f)
 
