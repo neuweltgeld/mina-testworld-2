@@ -6,7 +6,7 @@ This guide is intended for Mina test-world-2 Block Producers. If you encounter a
 sudo rm /etc/apt/sources.list.d/mina*.list
 
 # auto read system config using $(lsb_release -cs)
-echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina.list
+echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina-rampup.list
 sudo apt-get update
 
 # Then, install the package or packages that you need:
@@ -130,7 +130,7 @@ systemctl stop mina
 sudo rm /etc/apt/sources.list.d/mina*.list
 
 # auto read system config using $(lsb_release -cs)
-echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina.list
+echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina-rampup.list
 sudo apt-get update
 
 # Then, update the mina-berkeley to rampup6 from rampup5
