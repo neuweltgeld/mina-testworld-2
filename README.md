@@ -124,7 +124,7 @@ mina client status
 ## BERKELEY TESTNET RELEASE 2.0.0RAMPUP6 (ITN RC2)
 
 ```console
-# These update steps apply if you have installed with this guide. You can refer to discor for Docker steps.
+# These update steps apply if you have installed Mina Block Producer node with this guide. You can refer to discord channel for Docker steps.
 # Stop mina.service, it can take 1-2 minute to stop service, please wait.
 
 systemctl stop mina
