@@ -120,3 +120,37 @@ sudo journalctl -u mina -n 1000 -f
 
 mina client status
 ```
+
+## BERKELEY TESTNET RELEASE 2.0.0RAMPUP6 (ITN RC2)
+
+```console
+# These update steps apply if you have installed with this guide. You can refer to discor for Docker steps.
+# Stop mina.service, it can take 1-2 minute to stop service, please wait.
+
+systemctl stop mina
+
+# Then, set up and update the rampup Debian Repository for your platform.
+
+sudo rm /etc/apt/sources.list.d/mina*.list
+
+# Replace CODENAME with the appropriate codename for your machine and run
+# Ubuntu 20 - focal
+# Debian 11 - bullseye
+# Debian 10 - buster
+
+echo "deb [trusted=yes] http://packages.o1test.net/ CODENAME rampup" | sudo tee /etc/apt/sources.list.d/mina-rampup.list
+sudo apt-get update
+
+# Then, update the mina-berkeley to rampup6 from rampup5
+
+sudo apt-get install -y mina-berkeley=2.0.0rampup6-4061884
+
+# Reload daemon and start mina service again.
+
+sudo systemctl daemon-reload
+sudo systemctl start mina
+
+# Check latest status of mina.
+
+mina client status
+
