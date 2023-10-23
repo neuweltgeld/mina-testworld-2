@@ -5,12 +5,8 @@ This guide is intended for Mina test-world-2 Block Producers. If you encounter a
 # First, set up and update the rampup Debian Repository for your platform.
 sudo rm /etc/apt/sources.list.d/mina*.list
 
-# Replace CODENAME with the appropriate codename for your machine and run
-# Ubuntu 20 - focal
-# Debian 11 - bullseye
-# Debian 10 - buster
-
-echo "deb [trusted=yes] http://packages.o1test.net/ CODENAME rampup" | sudo tee /etc/apt/sources.list.d/mina-rampup.list
+# auto read system config using $(lsb_release -cs)
+echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina.list
 sudo apt-get update
 
 # Then, install the package or packages that you need:
@@ -133,12 +129,8 @@ systemctl stop mina
 
 sudo rm /etc/apt/sources.list.d/mina*.list
 
-# Replace CODENAME with the appropriate codename for your machine and run
-# Ubuntu 20 - focal
-# Debian 11 - bullseye
-# Debian 10 - buster
-
-echo "deb [trusted=yes] http://packages.o1test.net/ CODENAME rampup" | sudo tee /etc/apt/sources.list.d/mina-rampup.list
+# auto read system config using $(lsb_release -cs)
+echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina.list
 sudo apt-get update
 
 # Then, update the mina-berkeley to rampup6 from rampup5
