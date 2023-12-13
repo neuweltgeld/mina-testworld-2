@@ -117,7 +117,7 @@ sudo journalctl -u mina -n 1000 -f
 mina client status
 ```
 
-## BERKELEY TESTNET RELEASE 2.0.0RAMPUP6 (ITN RC2)
+## BERKELEY TESTNET RELEASE 2.0.0RAMPUP7 (ITN RC3)
 
 ```console
 # These update steps apply if you have installed Mina Block Producer node with this guide. You can refer to discord channel for Docker steps.
@@ -135,7 +135,7 @@ sudo apt-get update
 
 # Then, update the mina-berkeley to rampup6 from rampup5
 
-sudo apt-get install -y mina-berkeley=2.0.0rampup6-4061884
+sudo apt-get install -y mina-berkeley=2.0.0rampup7-4a0fff9
 
 # Reload daemon and start mina service again.
 
