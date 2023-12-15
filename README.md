@@ -137,14 +137,16 @@ sudo apt-get update
 
 sudo apt-get install -y mina-berkeley=2.0.0rampup7-4a0fff9
 
-# Add ``--itn-max-logs 10000`` flag to service file.
+# Add --itn-max-logs 10000 flag to service file.
 
 sudo nano /etc/systemd/system/mina.service
+```
 
 # Latest ExecStart line should be like this
 
 ![image](https://github.com/neuweltgeld/mina-testworld-2/assets/101174090/513001e6-9151-4eee-b1f8-65e84bda7091)
 
+```console
 # Use ctrl + x + y shortcut to save service file.
 
 # Reload daemon and start mina service again.
