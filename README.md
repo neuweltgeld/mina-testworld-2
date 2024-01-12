@@ -160,6 +160,7 @@ mina client status
 ```
 
 The expected output of the mina client status command is:
-![image](https://github.com/neuweltgeld/mina-testworld-2/assets/101174090/12ead049-bb1d-43b0-9e2b-331ffce9c3f7)
+![image](https://github.com/neuweltgeld/mina-testworld-2/assets/101174090/d868df2b-fa8b-4307-a2f1-c664f01dbddf)
+
 
 
