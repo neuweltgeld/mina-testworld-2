@@ -117,7 +117,7 @@ sudo journalctl -u mina -n 1000 -f
 mina client status
 ```
 
-## BERKELEY TESTNET RELEASE 2.0.0RAMPUP7 (ITN RC3)
+## BERKELEY TESTNET RELEASE 2.0.0rampup8 (ITN RC4)
 
 ```console
 # These update steps apply if you have installed Mina Block Producer node with this guide. You can refer to discord channel for Docker steps.
@@ -133,9 +133,9 @@ sudo rm /etc/apt/sources.list.d/mina*.list
 echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) rampup" | sudo tee /etc/apt/sources.list.d/mina-rampup.list
 sudo apt-get update
 
-# Then, update the mina-berkeley to rampup6 from rampup5
+# Then, update the mina-berkeley to rampup8 from rampup7
 
-sudo apt-get install -y mina-berkeley=2.0.0rampup7-4a0fff9
+sudo apt-get install -y mina-berkeley=2.0.0rampup8-56fa1db
 
 # Add --itn-max-logs 10000 flag to service file.
 
