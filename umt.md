@@ -136,19 +136,19 @@ The expected output of the mina client status command is:
 
 systemctl stop mina
 
-# If you ARE umt-no-upgrade user, use this commands. If you are not, skip to next step.
+# If you ARE umt-no-upgrade user, use these commands. If you are not, skip to next step.
 
 sudo apt remove mina-devnet=1.0.0umt-2025a73
 sudo mv /tmp/coda_cache_dir /tmp/coda_cache_dir_bak
 sudo mv $HOME/.mina-config $HOME/.mina-config_bak
 
-# If you ARE NOT umt-no-upgrade user, use this commands.
+# If you ARE NOT umt-no-upgrade user, use these commands.
 
 sudo apt remove mina-devnet=1.0.1umt-stop-slot-992168e 
 sudo mv /tmp/coda_cache_dir /tmp/coda_cache_dir_bak
 sudo mv $HOME/.mina-config $HOME/.mina-config_bak   
 
-# Then, set up and update the rampup Debian Repository for your platform.
+# Then, set up and update.
 
 sudo rm /etc/apt/sources.list.d/mina*.list
 sudo echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) umt" | sudo tee /etc/apt/sources.list.d/mina.list
@@ -166,7 +166,7 @@ sudo nano /etc/systemd/system/mina.service
 # Change --peer-list-url and use
 https://storage.googleapis.com/o1labs-gitops-infrastructure/o1labs-umt-post-fork-run-1/seeds-o1labs-umt-post-fork-run-1.txt
 
-# Reload daemon and start mina service.
+# Save the file, reload daemon and start mina service.
 
 sudo systemctl daemon-reload
 sudo systemctl start mina
