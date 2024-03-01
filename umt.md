@@ -128,5 +128,56 @@ The expected output of the mina client status command is:
 ![image](https://github.com/neuweltgeld/mina-testworld-2/assets/101174090/300a8241-e6a5-486a-b5de-be386c74f065)
 
 
+## UMT Upgrade Release 2.0.0umt
+
+```console
+# These update steps apply if you have installed Mina Block Producer node with this guide. You can refer to discord channel for Docker steps.
+# Stop mina.service, it can take 1-2 minute to stop service, please wait.
+
+systemctl stop mina
+
+# If you ARE umt-no-upgrade user, use this commands. If you are not, skip to next step.
+
+sudo apt remove mina-devnet=1.0.0umt-2025a73
+sudo mv /tmp/coda_cache_dir /tmp/coda_cache_dir_bak
+sudo mv $HOME/.mina-config $HOME/.mina-config_bak
+
+# If you ARE NOT umt-no-upgrade user, use this commands.
+
+sudo apt remove mina-devnet=1.0.1umt-stop-slot-992168e 
+sudo mv /tmp/coda_cache_dir /tmp/coda_cache_dir_bak
+sudo mv $HOME/.mina-config $HOME/.mina-config_bak   
+
+# Then, set up and update the rampup Debian Repository for your platform.
+
+sudo rm /etc/apt/sources.list.d/mina*.list
+sudo echo "deb [trusted=yes] http://packages.o1test.net $(lsb_release -cs) umt" | sudo tee /etc/apt/sources.list.d/mina.list
+sudo apt-get update
+
+# Then, update the UMT 2.0.0
+
+sudo apt-get install --allow-downgrades -y mina-devnet-hardfork=2.0.0umt-hardfork-automation-umt-eb0a6d0
+
+# We need make changes in service file.
+
+sudo nano /etc/systemd/system/mina.service
+
+# Replace --discovery-keypair with --libp2p-keypair and leave the path same (/root/keys/libkey)
+# Change --peer-list-url and use
+https://storage.googleapis.com/o1labs-gitops-infrastructure/o1labs-umt-post-fork-run-1/seeds-o1labs-umt-post-fork-run-1.txt
+
+# Reload daemon and start mina service.
+
+sudo systemctl daemon-reload
+sudo systemctl start mina
+
+```
+
+# Latest ExecStart line should be like this
+
+![image](https://github.com/neuweltgeld/mina-testworld-2/assets/101174090/f1a54013-e4aa-48fb-a845-380e6892dda6)
+
+
+
 
 
